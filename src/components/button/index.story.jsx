@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {Component} from 'react'
 import { Button, Icon } from "antd";
+const ButtonGroup = Button.Group;
 
 export const ButtonBasic = () => (
   <div>
@@ -10,14 +11,14 @@ export const ButtonBasic = () => (
   </div>
 )
 
-export const ButtonGroup = () => (
+export const Group = () => (
   <div>
     <h4>Basic</h4>
     <ButtonGroup>
       <Button>Cancel</Button>
       <Button type="primary">OK</Button>
     </ButtonGroup>
-    {/* <ButtonGroup>
+    <ButtonGroup>
       <Button disabled>L</Button>
       <Button disabled>M</Button>
       <Button disabled>R</Button>
@@ -55,7 +56,7 @@ export const ButtonGroup = () => (
     <ButtonGroup size="small">
       <Button type="ghost">Small</Button>
       <Button type="ghost">Small</Button>
-    </ButtonGroup> */}
+    </ButtonGroup>
   </div>
 )
 
@@ -82,3 +83,44 @@ export const Size = () => (
     <Button type="primary" size="small">Small</Button>
   </div>
 )
+
+export const AIcon = () => <div>
+  <Button type="primary" shape="circle" icon="search" />
+  <Button type="primary" icon="search">搜索</Button>
+  <br />
+  <Button type="ghost" shape="circle-outline" icon="search" />
+  <Button type="ghost" icon="search">Search</Button>
+  </div>
+
+export class Loading extends Component {
+  state = {
+    loading: false,
+    iconLoading: false,
+  }
+
+  enterLoading = () => {
+    this.setState({ loading: true });
+  }
+  enterIconLoading = () => {
+    this.setState({ iconLoading: true });
+  }
+  render() {
+    return (
+      <div>
+        <Button type="primary" loading>
+          Loading
+        </Button>
+        <Button type="primary" size="small" loading>
+          Loading
+        </Button>
+        <br />
+        <Button type="primary" loading={this.state.loading} onClick={this.enterLoading}>
+          Click me!
+        </Button>
+        <Button type="primary" icon="poweroff" loading={this.state.iconLoading} onClick={this.enterIconLoading}>
+          Click me!
+        </Button>
+      </div>
+    );
+  }
+}

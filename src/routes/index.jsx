@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router, Route, IndexRedirect, Link } from 'react-router'
+import { Router, Route, IndexRedirect, Link, hashHistory } from 'react-router'
 
 import './layout.css'
 
@@ -30,9 +30,10 @@ function importAll (r) {
     }
     routes.push(item)
   }
+  console.log(routes)
   return routes
 }
-const routes = importAll(require.context('../components/', true, /\.jsx?$/))
+const routes = importAll(require.context('../components/', true, /story\.jsx?$/))
 
 const Layout = props => {
   return (
@@ -41,10 +42,11 @@ const Layout = props => {
         {routes.map(item => {
           return (
             <div key={item.name}>
-              {item.name}
+              <h2>{item.name}</h2>
               {item.children.map(c => {
                 return (
-                  <li key={c.name}>
+                  <li key={`/${item.name}/${c.name}`}
+                  >
                     <Link to={`/${item.name}/${c.name}`} activeClassName="active">{c.name}</Link>
                   </li>
                 )
