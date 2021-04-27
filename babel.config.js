@@ -7,8 +7,8 @@ module.exports = (api) => {
         {
           useBuiltIns: 'entry',
           corejs: '3',
-            "modules": "commonjs",
-            loose: true,
+          "modules": "commonjs",
+          loose: true,
           // debug: true
         }
       ],
@@ -30,7 +30,10 @@ module.exports = (api) => {
           "helpers": true,
           "regenerator": false,
         }
-      ]
+      ],
+      ["@babel/plugin-proposal-class-properties", {
+        loose: true
+      }]
     ],
   };
 };
