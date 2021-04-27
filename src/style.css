@@ -6,6 +6,10 @@
   color: #2c3e50;
 }
 
+html, #app, body {
+  height: 100%;
+}
+
 .logo {
   display: block;
   width: 50px;

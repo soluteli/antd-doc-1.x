@@ -1,17 +1,28 @@
 .layout {
+  position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .layout-sidebar {
-  float: left;
+  height: 100%;
+  position: absolute;
   width: 120px;
-  margin: 0 10px;
-  border-right: 1px;
+  left: 10px;
+  border-right: 1px solid gray;
+  overflow-y: auto;
 }
 .layout-content {
   overflow: hidden;
+  margin-left: 140px;
+  padding: 30px;
 }
 
 .layout-sidebar .active{
   color: grey;
+}
+
+.layout-sidebar li {
+  list-style:none;
+  margin-left: 10px;
 }
