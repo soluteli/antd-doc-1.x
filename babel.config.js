@@ -15,13 +15,13 @@ module.exports = (api) => {
       "@babel/preset-react"
     ],
     plugins: [
-      /* [
+      [
         'import',
         {
           "libraryName": "antd",
-          "style": true, // css
+          // "style": true, // css
         }
-      ], */
+      ],
       [
         "@babel/plugin-transform-runtime",
         {
