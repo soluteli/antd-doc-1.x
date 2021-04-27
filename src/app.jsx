@@ -6,9 +6,9 @@ import AppRouter from "./routes/index";
 
 function APP() {
   return <div>
-    <img className="logo" alt="React logo" src={Logo}></img>
+{/*     <img className="logo" alt="React logo" src={Logo}></img>
     
-    <hr/>
+    <hr/> */}
     
     <AppRouter />
   </div>

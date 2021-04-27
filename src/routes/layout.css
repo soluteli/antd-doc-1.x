@@ -1,0 +1,13 @@
+.layout-sidebar {
+  float: left;
+  width: 120px;
+  margin: 0 10px;
+  border-right: 1px;
+}
+.layout-content {
+  overflow: hidden;
+}
+
+.layout-sidebar .active{
+  color: grey;
+}
