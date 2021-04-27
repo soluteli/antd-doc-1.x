@@ -1,3 +1,7 @@
+.layout {
+  overflow: hidden;
+}
+
 .layout-sidebar {
   float: left;
   width: 120px;
